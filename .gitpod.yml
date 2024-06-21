@@ -1,12 +1,8 @@
-
 tasks:
   - init: mvn install -DskipTests=false
 
-# and commit this file to your remote git repository to share the goodness with others.
-# Learn more from ready-to-use templates: https://www.gitpod.io/docs/introduction/getting-started/quickstart
+# Adding VS Code extensions
 vscode:
   extensions:
     - revaturepro.revature-labs
-
     - redhat.java
-
