@@ -120,15 +120,17 @@ public class SocialMediaController {
 
     private void deleteMessageHandler(Context ctx) {
         int messageId = Integer.parseInt(ctx.pathParam("message_id"));
-        boolean isDeleted = messageService.deleteMessage(messageId);
+        Optional<Message> message = messageService.getMessageById(messageId);
         
-        if (isDeleted) {
-            ctx.result("Message deleted successfully"); // Optionally return a success message
+        if (message.isPresent() && messageService.deleteMessage(messageId)) {
+            ctx.json(message.get());
+            ctx.status(200);
         } else {
             ctx.result(""); // Return an empty response body if the message did not exist
+            ctx.status(200); // Always return status 200
         }
-        ctx.status(200); // Always return status 200
     }
+    
 
     private void updateMessageHandler(Context ctx) {
         int messageId = Integer.parseInt(ctx.pathParam("message_id"));
