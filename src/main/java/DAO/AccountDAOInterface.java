@@ -4,6 +4,7 @@ import java.util.Optional;
 
 import Model.Account;
 
+// Created Interface
 public interface AccountDAOInterface {
 
     // Register a new account
