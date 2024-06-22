@@ -5,6 +5,8 @@ import java.util.Optional;
 
 import Model.Message;
 
+
+//  Created Interface 
 public interface MessageDAOInterface {
 
     // Create a new message
