@@ -6,3 +6,4 @@ vscode:
   extensions:
     - revaturepro.revature-labs
     - redhat.java
+    - vscjava.vscode-java-test
