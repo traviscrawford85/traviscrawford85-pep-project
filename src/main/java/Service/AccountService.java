@@ -1,18 +1,19 @@
 package Service;
 
 import DAO.AccountDAO;
+import DAO.AccountDAOInterface;
 import Model.Account;
 
 import java.util.Optional;
 
 public class AccountService {
-    private AccountDAO accountDAO;
+    private AccountDAOInterface accountDAO;
 
     public AccountService() {
         this(new AccountDAO());
     }
 
-    public AccountService(AccountDAO accountDAO) {
+    public AccountService(AccountDAOInterface accountDAO) {
         this.accountDAO = accountDAO;
     }
 

@@ -8,9 +8,10 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
-public class MessageDAO {
+public class MessageDAO implements MessageDAOInterface {
 
     // Create a new message
+    @Override
     public Optional<Message> createMessage(Message message) {
         try (Connection connection = ConnectionUtil.getConnection()) {
             String sql = "INSERT INTO Message (posted_by, message_text, time_posted_epoch) VALUES (?, ?, ?)";
@@ -40,6 +41,7 @@ public class MessageDAO {
     }
 
     // Retrieve all messages
+    @Override
     public List<Message> getAllMessages() {
         List<Message> messages = new ArrayList<>();
         try (Connection connection = ConnectionUtil.getConnection()) {
@@ -62,6 +64,7 @@ public class MessageDAO {
     }
 
     // Retrieve a message by its ID
+    @Override
     public Optional<Message> getMessageById(int messageId) {
         try (Connection connection = ConnectionUtil.getConnection()) {
             String sql = "SELECT * FROM Message WHERE message_id = ?";
@@ -87,6 +90,7 @@ public class MessageDAO {
     }
 
     // Delete a message by its ID
+    @Override
     public boolean deleteMessageById(int messageId) {
         try (Connection connection = ConnectionUtil.getConnection()) {
             String sql = "DELETE FROM Message WHERE message_id = ?";
@@ -102,6 +106,7 @@ public class MessageDAO {
     }
 
     // Update a message by its ID
+    @Override
     public Optional<Message> updateMessage(int messageId, String messageText) {
         try (Connection connection = ConnectionUtil.getConnection()) {
             String sql = "UPDATE Message SET message_text = ? WHERE message_id = ?";
@@ -121,6 +126,7 @@ public class MessageDAO {
     }
 
     // Retrieve all messages by a user's ID
+    @Override
     public List<Message> getMessagesByUserId(int userId) {
         List<Message> messages = new ArrayList<>();
         try (Connection connection = ConnectionUtil.getConnection()) {

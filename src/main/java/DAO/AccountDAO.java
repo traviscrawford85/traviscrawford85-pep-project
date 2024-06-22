@@ -9,9 +9,10 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Optional;
 
-public class AccountDAO {
+public class AccountDAO implements AccountDAOInterface {
 
     // Register a new account
+    @Override
     public Optional<Account> registerAccount(Account account) {
         try (Connection connection = ConnectionUtil.getConnection()) {
             String sql = "INSERT INTO Account (username, password) VALUES (?, ?)";
@@ -40,6 +41,7 @@ public class AccountDAO {
     }
 
     // Login user
+    @Override
     public Optional<Account> loginAccount(String username, String password) {
         try (Connection connection = ConnectionUtil.getConnection()) {
             String sql = "SELECT * FROM Account WHERE username = ? AND password = ?";

@@ -1,6 +1,7 @@
 package Service;
 
 import DAO.MessageDAO;
+import DAO.MessageDAOInterface;
 import Model.Message;
 
 import java.util.ArrayList;
@@ -8,13 +9,13 @@ import java.util.List;
 import java.util.Optional;
 
 public class MessageService {
-    private MessageDAO messageDAO;
+    private MessageDAOInterface messageDAO;
 
     public MessageService() {
         this(new MessageDAO());
     }
 
-    public MessageService(MessageDAO messageDAO) {
+    public MessageService(MessageDAOInterface messageDAO) {
         this.messageDAO = messageDAO;
     }
 
