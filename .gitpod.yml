@@ -4,6 +4,6 @@ tasks:
 # Adding VS Code extensions
 vscode:
   extensions:
-    - revaturepro.revature-labs
-    - redhat.java
-    - vscjava.vscode-java-test
+    - redhat.java@1.29.0
+    - vscjava.vscode-java-debug@0.57.0
+    - revaturepro.revature-labs@0.0.4
