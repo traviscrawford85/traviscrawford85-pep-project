@@ -5,4 +5,5 @@ vscode:
   extensions:
     - redhat.java@1.29.0
     - vscjava.vscode-java-debug@0.57.0
-    - revaturepro.revature-labs@0.0.4
+    - revaturepro.revature-labs@0.0.4  
+    
