@@ -1,5 +1,5 @@
 package Service;
-/* Service */
+
 import DAO.AccountDAO;
 import DAO.AccountDAOInterface;
 import Model.Account;
