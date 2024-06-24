@@ -1,7 +1,6 @@
 tasks:
   - init: mvn install -DskipTests=false
 
-# Adding VS Code extensions
 vscode:
   extensions:
     - redhat.java@1.29.0
